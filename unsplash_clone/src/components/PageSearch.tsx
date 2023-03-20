@@ -2,7 +2,11 @@ import { Search } from "@mui/icons-material";
 import { IconButton, InputBase } from "@mui/material";
 import React, { useState } from "react";
 import waterFall from "../assets/waterFall.jpg";
-const PageSearch = () => {
+import { image } from "../types";
+type allProps = {
+  searchApi: (values: string | undefined) => void;
+};
+const PageSearch = ({ searchApi }: allProps) => {
   const [search, setSearch] = useState<string>();
   return (
     <div
@@ -31,10 +35,11 @@ const PageSearch = () => {
           endAdornment={
             <IconButton>
               <Search
-              // onClick={(e) => {
-              //   e.preventDefault();
-              //   if (search) searchApi(search);
-              // }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  console.log(search);
+                  if (search) searchApi(search);
+                }}
               />
             </IconButton>
           }

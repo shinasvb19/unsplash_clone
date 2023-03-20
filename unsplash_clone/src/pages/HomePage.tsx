@@ -27,7 +27,7 @@ const HomePage = () => {
       <Bottom />
       {searchResult?.length === 0 ? (
         <div>
-          <PageSearch />
+          <PageSearch searchApi={searchApi} />
           <ImageContent />
         </div>
       ) : (
