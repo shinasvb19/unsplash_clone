@@ -23,11 +23,7 @@ const HomePage = () => {
   const [searchResult, setSearchResult] = useState<image[]>([]);
   return (
     <div>
-      <NavBar
-        allData={searchResult}
-        setFunction={setSearchResult}
-        searchApi={searchApi}
-      />
+      <NavBar allData={searchResult} searchApi={searchApi} />
       <Bottom />
       {searchResult?.length === 0 ? (
         <div>

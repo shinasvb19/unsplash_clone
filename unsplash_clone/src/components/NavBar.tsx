@@ -16,6 +16,7 @@ import { useState } from "react";
 import { image } from "../types";
 
 type allProps = {
+  allData: image[];
   searchApi: (values: string | undefined) => void;
 };
 
