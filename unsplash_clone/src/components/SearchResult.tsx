@@ -4,6 +4,11 @@ import { image } from "../types";
 type allProps = {
   result: image[];
 };
+
+// interface Result {
+//   results: image[];
+// }
+
 const SearchResult = ({ result }: allProps) => {
   return (
     <div>
@@ -15,7 +20,7 @@ const SearchResult = ({ result }: allProps) => {
             gap={8}
             sx={{ marginTop: "18vh" }}
           >
-            {result?.results.map((item) => (
+            {result?.map((item) => (
               <ImageListItem key={item?.id}>
                 <img
                   src={`${item?.urls.thumb}?w=248&fit=crop&auto=format`}

@@ -31,10 +31,10 @@ const PageSearch = () => {
           endAdornment={
             <IconButton>
               <Search
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (search) searchApi(search);
-                }}
+              // onClick={(e) => {
+              //   e.preventDefault();
+              //   if (search) searchApi(search);
+              // }}
               />
             </IconButton>
           }

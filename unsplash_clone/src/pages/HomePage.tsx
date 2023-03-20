@@ -17,7 +17,7 @@ const HomePage = () => {
         `${apiRoot}/search/photos?page=1&query=${values}&client_id=${accessKey}`
       )
       .then((res) => {
-        setSearchResult(res.data);
+        setSearchResult(res.data.results);
       });
   }
   const [searchResult, setSearchResult] = useState<image[]>([]);
