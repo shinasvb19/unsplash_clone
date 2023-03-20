@@ -11,16 +11,15 @@ import {
 import { Search } from "@mui/icons-material";
 import icon from "../assets/unsplash_icon.png";
 import MenuIcon from "@mui/icons-material/Menu";
-import { image } from "../pages/HomePage";
+
 import { useState } from "react";
+import { image } from "../types";
 
 type allProps = {
-  allData: image[];
-  setFunction: React.Dispatch<React.SetStateAction<image[]>>;
   searchApi: (values: string | undefined) => void;
 };
 
-const NavBar = ({ allData, setFunction, searchApi }: allProps) => {
+const NavBar = ({ searchApi }: allProps) => {
   const [search, setSearch] = useState<string>();
   return (
     <AppBar position="fixed" sx={{ backgroundColor: "white" }} elevation={0}>
@@ -44,7 +43,8 @@ const NavBar = ({ allData, setFunction, searchApi }: allProps) => {
             <IconButton>
               <Search
                 onClick={(e) => {
-                  searchApi(search);
+                  e.preventDefault();
+                  if (search) searchApi(search);
                 }}
               />
             </IconButton>

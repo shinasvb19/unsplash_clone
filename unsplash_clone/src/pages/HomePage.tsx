@@ -5,13 +5,8 @@ import ImageContent from "../components/ImageContent";
 import NavBar from "../components/NavBar";
 import PageSearch from "../components/PageSearch";
 import SearchResult from "../components/SearchResult";
-export type image = {
-  id: string;
-  urls: {
-    thumb: string;
-  };
-  alt_description?: string;
-};
+import { image } from "../types";
+
 const HomePage = () => {
   function searchApi(values: string | undefined) {
     if (values?.length === 0) return;
@@ -41,7 +36,7 @@ const HomePage = () => {
         </div>
       ) : (
         <div>
-          <SearchResult />
+          <SearchResult result={searchResult} />
         </div>
       )}
     </div>
