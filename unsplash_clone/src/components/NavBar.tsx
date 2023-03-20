@@ -11,24 +11,42 @@ import {
 import { Search } from "@mui/icons-material";
 import icon from "../assets/unsplash_icon.png";
 import MenuIcon from "@mui/icons-material/Menu";
-const NavBar = () => {
+import { image } from "../pages/HomePage";
+import { useState } from "react";
+
+type allProps = {
+  allData: image[];
+  setFunction: React.Dispatch<React.SetStateAction<image[]>>;
+  searchApi: (values: string | undefined) => void;
+};
+
+const NavBar = ({ allData, setFunction, searchApi }: allProps) => {
+  const [search, setSearch] = useState<string>();
   return (
     <AppBar position="fixed" sx={{ backgroundColor: "white" }} elevation={0}>
       <Toolbar>
         <img src={icon} className="w-6 h-6 mr-5" />
 
         <InputBase
+          value={search}
+          onChange={(e) => {
+            setSearch(e.target.value);
+          }}
           sx={{
             backgroundColor: "#EEEEEE",
             gap: 2,
             borderRadius: 3,
-            width: "100vh",
+            width: "90vh",
           }}
           placeholder="Search for images"
           inputProps={{ "aria-label": "search" }}
           endAdornment={
             <IconButton>
-              <Search />
+              <Search
+                onClick={(e) => {
+                  searchApi(search);
+                }}
+              />
             </IconButton>
           }
         />

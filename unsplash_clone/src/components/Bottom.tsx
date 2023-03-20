@@ -11,7 +11,7 @@ const Bottom = () => {
   };
 
   return (
-    <div className="mt-16 fixed z-50 bg-white w-full">
+    <div className="mt-16  fixed z-50 bg-white w-full">
       <Box sx={{ width: "100%" }}>
         <Tabs
           value={value}

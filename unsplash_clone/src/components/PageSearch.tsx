@@ -2,7 +2,7 @@ import React from "react";
 import waterFall from "../assets/waterFall.jpg";
 const PageSearch = () => {
   return (
-    <div>
+    <div className="">
       <img src={waterFall} className="w-full h-screen mr-5" />
     </div>
   );
